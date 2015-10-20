@@ -14,7 +14,6 @@ class Response
 
 
   def self.get_answer question
-    puts @@count
 
     if @@count == 10
       puts "Goodbye"
@@ -22,7 +21,6 @@ class Response
     if (question.include?("!"))
       @@yelling_mode = !@@yelling_mode
     end
-    puts @@yelling_mode
     responses = @@responses.select{|r| r.good_for? question}
     if (@@yelling_mode == true)
       if responses.length > 0
